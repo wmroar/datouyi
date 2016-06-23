@@ -45,4 +45,16 @@ class Kind(BaseEntity):
     def get_by_level(self):
         sql_dict = {'condition':self.gen_condition()}
         return self.execute(self.sql % sql_dict)
-    
+
+    def add(self):
+        self.sql = "insert into datouyi.kind(pid, name, des) VALUES (%(id)s,'%(name)s','%(des)s')"
+        return self.execute(self.sql % self.sql_dict)
+
+    def delete(self):
+        self.sql = "delete from datouyi.kind where id = %(id)s"
+        return self.execute(self.sql % self.sql_dict)
+
+    def update(self):
+        self.sql = "update datouyi.kind set name = '%(name)s',des = '%(des)s' where id = %(id)s"
+        self.execute(self.sql % self.sql_dict)
+        return 'success'

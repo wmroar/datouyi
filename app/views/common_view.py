@@ -30,11 +30,22 @@ class KindHandler(BaseHandler):
             'id':self.get_argument('id',None),
             'name':self.get_argument('name',None),
             'des' : self.get_argument('des',None),
+            'pid' : self.get_argument('pid',0)
         }
 
         type = self.get_argument('type','update')
         kind = Kind(self.db,sql_dict)
 
         if type == 'update':
-            pass
+            if sql_dict.get('id',None):
+                self.write(kind.update())
+            self.write('eeee')
+        elif type == 'add' :
+            if sql_dict.get('id',None):
+                self.write(kind.update())
+            self.write('eeee')
+        elif type == 'delete':
+            if sql_dict.get('id',None):
+                self.write(kind.update())
+            self.write('eeee')
 
