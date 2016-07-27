@@ -2,6 +2,8 @@
 
 from sql_template import  KIND_TPL
 import logging
+import sys
+sys.setdefault
 
 class BaseEntity(object):
 
