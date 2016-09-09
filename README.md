@@ -10,3 +10,4 @@ $ flask\Scripts\pip install flask-babel
 $ flask\Scripts\pip install guess_language
 $ flask\Scripts\pip install flipflop
 $ flask\Scripts\pip install coverage
+#finsh
