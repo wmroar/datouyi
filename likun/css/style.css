@@ -57,7 +57,8 @@ a {
 html, body {
 	background: #f9f9f9;
 	width: 100%;
-	height: 100%;
+	/*height: 100%;*/
+	overflow:visible;
 	font-family: Helvetica, sans-serif;
 	-webkit-text-size-adjust: none;
 }
@@ -82,17 +83,12 @@ textarea.fixAndroidKeyboard:focus, input.fixAKeyboard:focus {
 	width: 100%;
 }
 
-.clearfix:after {
-	display: block;
-	content: '';
-	clear: both;
-	visibility: hidden;
-}
+
 
 
 body {
 	font: 12px/1.5 "Microsoft YaHei", tahoma, arial, Hiragino Sans GB, \5b8b\4f53;
-	overflow: hidden;
+	overflow: visible;
 	position: relative;
 	height: 100%;
 	width: 100%;
@@ -111,7 +107,7 @@ a {
 }
 
 .nav {
-	width: 80%;
+	width: 90%;
 	height: 30px;
 	line-height: 30px;
 	margin: 0 auto;
@@ -124,9 +120,11 @@ a {
 	display: block;
 	width: 100px;
 	height: 40px;
+	margin-left: 0px;
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	background-size: 70px;
+	position: fixed;
 }
 
 .entry {
@@ -156,7 +154,7 @@ a {
 
 .content {
 	width: 1200px;
-	height: 100%;
+	height: 600px;
 	margin: 0 auto;;
 }
 
@@ -172,6 +170,7 @@ a {
 .slogan {
 	width: 600px;
 	height: 200px;
+	/*padding: 100px 0;*/
 	background: url(../img/slogan.png) no-repeat 0 0;
 	display: inline-block;
 	background-size: 600px;
@@ -179,6 +178,7 @@ a {
 
 .mid {
 	width: 100%;
+	overflow: hidden;
 }
 
 .main-entry {
@@ -194,7 +194,7 @@ a {
 	text-align: center;
 	cursor: pointer;
 	border-radius: 8px;
-	font-size: 14px;
+	font-size: 16px;
 	letter-spacing: 1px;
 	height: 50px;
 	width: 170px;
@@ -210,9 +210,12 @@ a {
 	width: 100%;
 	height: 100%;
 	z-index: 2;
-	padding-left: 18px;
+	padding-left: 0px;
 }
 
+.clear{
+	clear:both;
+}
 .main-entry a .title i {
 	position: absolute;
 	left: 20px;
@@ -224,15 +227,15 @@ a {
 	background-size: 24px;
 }
 
-.main-entry a .title .seller {
-	background-image: url(https://img.alicdn.com/tps/TB12JNkIFXXXXXBXXXXXXXXXXXX.png);
+/*.main-entry a .title .seller {
+	background-image: url(#);
 }
 .main-entry a .title .developer {
 	background-image: url(https://zos.alipayobjects.com/rmsportal/neqhNGwxBXBmhVY.png);
-}
+}*/
 
 .main-entry s {
-	background-color: #00a3ee;
+	background-color: #CD950C;
 	opacity: .9;
 	display: block;
 	border-radius: 8px;
@@ -279,18 +282,20 @@ a.seller-login
 }
 
 .footer {
-	position: absolute;
-	bottom: 0px;
 	left: 0px;
+	margin-top: 30px;
+	padding-top: 30px;
 	width: 100%;
 	height: 60px;
 	background-color: white;
 	z-index: 99;
 }
 
+
 .nav-links {
 	width: 99%;
 	height: 20px;
+	padding-top: 30px;
 	margin: 0 auto;
 	text-align: center;
 	overflow: hidden;
@@ -415,6 +420,7 @@ a.pic7:hover {
 	left: 0;
 	top: 0;
 	width: 100%;
+	height: 600px;
 	overflow: hidden;
 }
 
