@@ -66,7 +66,7 @@ def bootstrap(app):
 
     """这里是暂时取消了
     """
-    # pg_db = _get_db()
+    pg_db = _get_db()
     # redis_db, redis_list = _get_redis_db()
     # mongo_db = _get_mongo_db()
 
@@ -85,7 +85,7 @@ def bootstrap(app):
     @app.before_request
     def get_db():
         pass
-        #g.db = pg_db
+        g.db = pg_db
         # g.impala_db = impalaConn
         # g.redis_db = redis_db
         # g.redis_list = redis_list
