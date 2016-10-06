@@ -86,6 +86,7 @@ def all_product():
         "starts":page*9,
         "ends"  : page*9  + 9,
     }
+    current_app.logger.info(sql%sql_dict)
     datas = g.db.query(sql,sql_dict)
     sections = g.db.query('select id,name from section where id >= 13')
     return render_template('product.html',data=datas,page=page + 1,sections = sections)
