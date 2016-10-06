@@ -4,13 +4,11 @@
     <title>详细信息</title>
 </head>
 <body>
-{% autoescaping false %}
 {%for d in data%}
 <h3 align="center">{{d.title}}</h3>
 <br>
 <br>
-{{d.content}}
+{{d.content|safe}}
 {%endfor%}
-{% endautoescape %}
 </body>
 </html>
