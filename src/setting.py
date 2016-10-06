@@ -7,7 +7,7 @@ GZIP = True
 DB_HOST= 'localhost'
 DB_PORT= 3306
 DB_USER = 'root'
-DB_PASSWD = 'wang123'
+DB_PASSWD = 'wang@2016__'
 DB_NAME = 'chichuwei'
 
 MEMCACHE_HOST = 'localhost:11211'
