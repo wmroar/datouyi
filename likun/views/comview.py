@@ -144,4 +144,10 @@ def add_pro_index():
 
 @comm.route('/')
 def index():
-    return render_template('index.html')
+    news_sql = "select title,id,major_pic from product where section_id  = 2 order by id desc limit 0,6"
+    news = g.db.query(news_sql)
+    act_sql = "select title,id,major_pic from product where section_id  = 3 order by id desc limit 0,6"
+    acts = g.db.query(news_sql)
+    exam_sql = "select title,id,major_pic from product where section_id  = 3 order by id desc limit 0,6"
+    exams = g.db.query(news_sql)
+    return render_template('index.html',news = news,acts=acts,exams=exams)
