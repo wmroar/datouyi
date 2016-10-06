@@ -12,7 +12,7 @@ import os
 import datetime
 import re
 import flask
-from flask import Flask, request, session, g, Response, Blueprint, current_app,url_for
+from flask import Flask, request, session, g, Response, Blueprint, current_app,url_for,render_template
 from werkzeug import secure_filename
 import json
 
@@ -64,3 +64,10 @@ def do_add_pro():
     """
     g.db.execute(sql,sql_dict)
     return '添加成功'
+
+@pro.route('/detail/')
+def index_pro_detail():
+    id = request.args.get('id',0)
+    sql = "select title,read_num,content from product where id = %(id)s"
+    data = g.db.query(sql,{'id':id})
+    return render_template('prodetail.html',data=data)

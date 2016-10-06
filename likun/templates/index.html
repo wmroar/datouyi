@@ -63,8 +63,33 @@
                <dl class="list-news">
             <dt><h3>活动专区</h3> <a href="#" target="_blank">更多<span></span></a></dt>
             <dd>
-                <div class="news"><a href="#" target="_blank">
+                <div class="news">
+                    {%for fnew in facts%}
+                       <a href="/pro/detail/?id={{new.id}}" target="_blank">
+                        <li>
+                        <img src="{{fnew.major_pic}}" /><div class="t">{{fnew.title}}</div></a></div>
+                             
+                        </li>
+                    {%endfor%}
+                
+                <ul>
+                    {%for new in acts%}
+                        <li>
+                            <a href="/pro/detail/?id={{new.id}}" target="_blank"> {{new.title}}</a>
+                             
+                        </li>
+                    {%endfor%}
+
+                </ul>
+            </dd>
+        </dl>
+
+        <dl class="list-news">
+            <dt><h3>新闻动态</h3> <a href="#" target="_blank">更多<span></span></a></dt>
+            <dd>
+                <div class="news">
                     {%for fnew in fnews%}
+                      <a href="/pro/detail/?id={{new.id}}" target="_blank">
                         <li>
                         <img src="{{fnew.major_pic}}" /><div class="t">{{fnew.title}}</div></a></div>
                              
@@ -81,37 +106,15 @@
 
                 </ul>
             </dd>
-        </dl>
-
-        <dl class="list-news">
-            <dt><h3>新闻动态</h3> <a href="#" target="_blank">更多<span></span></a></dt>
-            <dd>
-                <div class="news"><a href="#" target="_blank">
-                    {%for fnew in facts%}
-                        <li>
-                        <img src="{{fnew.major_pic}}" /><div class="t">{{fnew.title}}</div></a></div>
-                             
-                        </li>
-                    {%endfor%}
-                
-                <ul>
-                    {%for new in acts%}
-                        <li>
-                            <a href="/pro/detail/?id={{new.id}}" target="_blank"> {{new.title}}</a>
-                             
-                        </li>
-                    {%endfor%}
-
-                </ul>
-            </dd>ul>
             </dd>
         </dl>
         
         <dl class="list-news mr0">
             <dt><h3>成功案例</h3> <a href="#" target="_blank" target="_blank">更多<span></span></a></dt>
                 <dd>
-                <div class="news"><a href="#" target="_blank">
+                <div class="news">
                     {%for fnew in fexams%}
+                       <a href="/pro/detail/?id={{new.id}}" target="_blank">
                         <li>
                         <img src="{{fnew.major_pic}}" /><div class="t">{{fnew.title}}</div></a></div>
                              
