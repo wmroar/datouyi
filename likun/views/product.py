@@ -57,5 +57,5 @@ def do_add_pro():
     sql = """insert into product(title,name,content,user_id,prioriry,price,source)
     values (%(title)s,%(name)s,%(content)s,%(user_id)s,%(prioriry)s,%(price)s,%(source)s)
     """
-    #g.db.execute(sql,sql_dict)
+    g.db.execute(sql,sql_dict)
     return '添加成功'

@@ -11,7 +11,7 @@
 from flask import session, g, request, current_app
 # import redis
 import os
-#from libs.DB_Mysql import Connection
+from libs.DB_Mysql import Connection
 import platform
 from views.comview import comm
 from views.product import pro
