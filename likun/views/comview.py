@@ -144,17 +144,36 @@ def add_pro_index():
 
 @comm.route('/')
 def index():
-    news_sql = "select title,id,major_pic from product where section_id  = 2 order by id desc limit 0,6"
-    news = g.db.query(news_sql)
-    act_sql = "select title,id,major_pic from product where section_id  = 3 order by id desc limit 0,6"
-    acts = g.db.query(act_sql)
-    exam_sql = "select title,id,major_pic from product where section_id  = 4 order by id desc limit 0,6"
-    exams = g.db.query(exam_sql)
-
-    fnews_sql = "select title,id,major_pic from product where section_id  = 12 order by id desc limit 0,1"
-    fnews = g.db.query(fnews_sql)
-    fact_sql = "select title,id,major_pic from product where section_id  = 10 order by id desc limit 0,1"
-    facts = g.db.query(fact_sql)
-    fexam_sql = "select title,id,major_pic from product where section_id  = 11 order by id desc limit 0,1"
-    fexams = g.db.query(fexam_sql)
+    news_sql = """select title,id,major_pic,section_idfrom product where section_id  = 2 order by id desc limit 0,6
+                  union
+                  select title,id,major_pic,section_id from product where section_id  = 3 order by id desc limit 0,6
+                  union
+                  select title,id,major_pic,section_id from product where section_id  = 4 order by id desc limit 0,6
+                  union
+                  select title,id,major_pic,section_id from product where section_id  = 12 order by id desc limit 0,1
+                  union
+                  select title,id,major_pic,section_id from product where section_id  = 10 order by id desc limit 0,1
+                  union
+                  select title,id,major_pic,section_id from product where section_id  = 11 order by id desc limit 0,1
+                """
+    acts = []
+    exams = []
+    fnews =[]
+    facts = []
+    fexams =[]
+    news = []
+    datas = g.db.query(news_sql)
+    for data in datas:
+        if data['section_id'] == 2:
+            news.append(data)
+        elif data['section_id'] == 3:
+            acts.append(data)
+        elif data['section_id'] == 4:
+            exams.append(data)
+        elif data['section_id'] == 10:
+            facts.append(data)
+        elif data['section_id'] == 11:
+            fexams.append(data)
+        elif data['section_id'] == 12:
+            fnews.append(data)
     return render_template('index.html',news = news,acts=acts,exams=exams,fnews=fnews,facts=facts,fexams=fexams)
