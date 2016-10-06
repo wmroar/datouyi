@@ -60,36 +60,21 @@
     </div>
 </div>
     <div class="wrap-news">
-        <dl class="list-news">
+               <dl class="list-news">
             <dt><h3>活动专区</h3> <a href="#" target="_blank">更多<span></span></a></dt>
             <dd>
-                <div class="news"><a href="#" target="_blank"><img src="img/topic.jpg" /><div class="t">正在举行的活动111111111111！</div></a></div>
+                <div class="news"><a href="#" target="_blank"><img src="{{url_for('static',filename='img/topic.jpg')}}" /><div class="t">正在举行的活动111111111111！</div></a></div>
                 <ul>
-                    <li>
-                    <a href="/a/school/2015/1204/4385.html" target="_blank"> 正在举行的活动111111111111！</a>
-                     
-                    </li>
-    <li>
-                    <a href="/a/school/2015/1203/4384.html" target="_blank">正在举行的活动111111111111！</a>
-                     
-                    </li>
-    <li>
-                    <a href="/a/school/2015/1204/4388.html" target="_blank">正在举行的活动111111111111！</a>
-                     
-                    </li>
-    <li>
-                    <a href="/a/school/2015/1102/4357.html" target="_blank">正在举行的活动111111111111！</a>
-                     
-                    </li>
-    <li>
-                    <a href="/a/school/2015/1204/4387.html" target="_blank">正在举行的活动111111111111！</a>
-                     
-                    </li>
+                    {%for new in news%}
+                        <li>
+                            <a href="/pro/detail/?id={{new.id}}" target="_blank"> {{new.title}}</a>
+                             
+                        </li>
+                    {%endfor%}
 
                 </ul>
             </dd>
         </dl>
-        
 
         <dl class="list-news">
             <dt><h3>新闻动态</h3> <a href="#" target="_blank">更多<span></span></a></dt>
