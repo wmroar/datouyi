@@ -10,7 +10,7 @@
 </head>
 <body>
 <form action="/pro/addpro/" enctype="multipart/form-data" method = 'post'>
-    请选择目录：<select>
+    请选择目录：<select name='prosection'>
         {% for section in sections%}
             <option value="{{section.id}}">{{section.name}}</option>
         {%endfor%}
