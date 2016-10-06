@@ -141,3 +141,7 @@ def add_pro_index():
     sql = 'select id,name from section where id > 1'
     datas = g.db.query(sql)
     return render_template('add_product.html',sections = datas)
+
+@comm.route('/')
+def index():
+    return render_template('index.html')
