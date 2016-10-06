@@ -193,40 +193,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="top-product">
                        {%for data in datas%}
 
-                        <div class="col-md-4 chain-grid  simpleCart_shelfItem">
-                            <div class="grid-span-1">
-                            <a  href="detail.html"><img class="img-responsive " src="{{data.major_pic}}" alt=" ">
-                                <div class="link">
-                                <ul >
-                                        <li><i class="glyphicon glyphicon-search"> </i></li>
-                                        
-                                </ul>
-                            </div>
-                            </a>
-                        </div>
-                        <div class="grid-chain-bottom ">
-                            <a href="detail.html">{{data.name}}</a>
-                            <div class="star-price">
-                                <div class="price-at">
-                                    <ul class="star-footer">
-                                    <li><a href="#"><i> </i></a></li>
-                                    <li><a href="#"><i> </i></a></li>
-                                    <li><a href="#"><i> </i></a></li>
-                                    <li><a href="#"><i> </i></a></li>
-                                    <li><a href="#"><i> </i></a></li>
-                                </ul>
+                            <div class="col-md-4 chain-grid  simpleCart_shelfItem">
+                                <div class="grid-span-1">
+                                <a  href="detail.html"><img class="img-responsive " src="{{data.major_pic}}" alt=" ">
+                                    <div class="link">
+                                    <ul >
+                                            <li><i class="glyphicon glyphicon-search"> </i></li>
+                                            
+                                    </ul>
                                 </div>
-                                <div class="price-at-bottom ">
-                                    <span class="item_price">$ 75.00</span>
+                                </a>
+                            </div>
+                            <div class="grid-chain-bottom ">
+                                <a href="detail.html">{{data.name}}</a>
+                                <div class="star-price">
+                                    <div class="price-at">
+                                        <ul class="star-footer">
+                                        <li><a href="#"><i> </i></a></li>
+                                        <li><a href="#"><i> </i></a></li>
+                                        <li><a href="#"><i> </i></a></li>
+                                        <li><a href="#"><i> </i></a></li>
+                                        <li><a href="#"><i> </i></a></li>
+                                    </ul>
+                                    </div>
+                                    <div class="price-at-bottom ">
+                                        <span class="item_price">$ {{data.price}}</span>
+                                    </div>
+                                    <div class="clearfix"> </div>
                                 </div>
-                                <div class="clearfix"> </div>
+                                <div class="cart-add">
+                                    <a class="add1 item_add" href="#">添加至购物车 <i> </i></a>
+                                    <a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
+                                    <div class="clearfix"> </div>
+                                </div>
                             </div>
-                            <div class="cart-add">
-                                <a class="add1 item_add" href="#">添加至购物车 <i> </i></a>
-                                <a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
-                                <div class="clearfix"> </div>
-                            </div>
-                        </div>
                         {%endfor%}
                     </div>
                 </div>
