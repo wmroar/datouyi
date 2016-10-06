@@ -12,46 +12,6 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/copy.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css')}}" />
-    <!--[if lte IE 7]>
-    <script type="text/javascript">
-        window.location.href = 'https://www.alipay.com/x/kill-ie.htm';
-    </script>
-    <![endif]-->
-
-    <!--[if lte IE 8]>
-    <style>
-        .slogan, .main-entry a .title i, .logo {
-            background-image: none !important;
-        }
-        .slogan {
-            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="https://img.alicdn.com/tps/TB1POhqIFXXXXXbXFXXXXXXXXXX.png", sizingMethod="scale");
-        }
-
-        .main-entry a .title i {
-            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="https://img.alicdn.com/tps/TB1uh30IpXXXXXKXVXXXXXXXXXX.png", sizingMethod="scale");
-        }
-
-        .main-entry a .title .seller {
-            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="https://img.alicdn.com/tps/TB12JNkIFXXXXXBXXXXXXXXXXXX.png", sizingMethod="scale");
-        }
-
-        .logo {
-            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="https://img.alicdn.com/tps/TB17ghmIFXXXXXAXFXXXXXXXXXX.png", sizingMethod="scale");
-        }
-
-        .item1 {
-            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="https://img.alicdn.com/tps/TB1h9xxIFXXXXbKXXXXXXXXXXXX.jpg", sizingMethod="scale");
-        }
-
-        .item2 {
-            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="https://img.alicdn.com/tps/TB1pfG4IFXXXXc6XXXXXXXXXXXX.jpg", sizingMethod="scale");
-        }
-
-        .item3 {
-            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="https://img.alicdn.com/tps/TB1sXGYIFXXXXc5XpXXXXXXXXXX.jpg", sizingMethod="scale");
-        }
-    </style>
-    <![endif]-->
 	
 </head>
 <body>
@@ -89,11 +49,11 @@
  			
             <div class="items">
                 <div class="item item1"
-                     style="background-image:url(img/bg1.jpg)"></div>
+                     style="background-image:url({{url_for('static',filename='img/bg1.jpg')}})"></div>
                 <div class="item item2"
-                     style="background-image:url(img/bg2.jpg)"></div>
+                     style="background-image:url({{url_for('static',filename='img/bg1.jpg')}})"></div>
                 <div class="item item3"
-                     style="background-image:url(img/bg3.jpg)"></div>
+                     style="background-image:url({{url_for('static',filename='img/bg1.jpg')}})"></div>
             </div>
           	
         </div>
