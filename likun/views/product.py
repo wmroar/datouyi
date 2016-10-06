@@ -81,7 +81,7 @@ def all_product():
         ids = ""
     else:
         ids = "and section_id = %d"%section_id
-    sql = "select * from product where section_id >= 13" + ids + "order by read_num desc limit %(starts)s,%(ends)s"
+    sql = "select * from product where section_id >= 13 " + ids + " order by read_num desc limit %(starts)s,%(ends)s"
     sql_dict = {
         "starts":page*9,
         "ends"  : page*9  + 9,
