@@ -147,7 +147,14 @@ def index():
     news_sql = "select title,id,major_pic from product where section_id  = 2 order by id desc limit 0,6"
     news = g.db.query(news_sql)
     act_sql = "select title,id,major_pic from product where section_id  = 3 order by id desc limit 0,6"
-    acts = g.db.query(news_sql)
-    exam_sql = "select title,id,major_pic from product where section_id  = 3 order by id desc limit 0,6"
-    exams = g.db.query(news_sql)
-    return render_template('index.html',news = news,acts=acts,exams=exams)
+    acts = g.db.query(act_sql)
+    exam_sql = "select title,id,major_pic from product where section_id  = 4 order by id desc limit 0,6"
+    exams = g.db.query(exam_sql)
+
+    fnews_sql = "select title,id,major_pic from product where section_id  = 12 order by id desc limit 0,1"
+    fnews = g.db.query(fnews_sql)
+    fact_sql = "select title,id,major_pic from product where section_id  = 10 order by id desc limit 0,1"
+    facts = g.db.query(fact_sql)
+    fexam_sql = "select title,id,major_pic from product where section_id  = 11 order by id desc limit 0,1"
+    fexams = g.db.query(fexam_sql)
+    return render_template('index.html',news = news,acts=acts,exams=exams,fnews=fnews,facts=facts,fexams=fexams)

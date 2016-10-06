@@ -63,7 +63,14 @@
                <dl class="list-news">
             <dt><h3>活动专区</h3> <a href="#" target="_blank">更多<span></span></a></dt>
             <dd>
-                <div class="news"><a href="#" target="_blank"><img src="{{url_for('static',filename='img/topic.jpg')}}" /><div class="t">正在举行的活动111111111111！</div></a></div>
+                <div class="news"><a href="#" target="_blank">
+                    {%for fnew in fnews%}
+                        <li>
+                        <img src="{{fnew.major_pic}}" /><div class="t">{{fnew.title}}</div></a></div>
+                             
+                        </li>
+                    {%endfor%}
+                
                 <ul>
                     {%for new in news%}
                         <li>
@@ -79,43 +86,48 @@
         <dl class="list-news">
             <dt><h3>新闻动态</h3> <a href="#" target="_blank">更多<span></span></a></dt>
             <dd>
-                <div class="news"><a href="http://www.uc.cn/a/news/2016/0825/4530.html" target="_blank"><img src="img/news.jpg" /><div class="t">公司新闻公司新闻＂</div></a></div>
+                <div class="news"><a href="#" target="_blank">
+                    {%for fnew in facts%}
+                        <li>
+                        <img src="{{fnew.major_pic}}" /><div class="t">{{fnew.title}}</div></a></div>
+                             
+                        </li>
+                    {%endfor%}
+                
                 <ul>
-                    <li>
-                    <a href="/a/product/2016/0831/4533.html" target="_blank">公司新闻公司新闻</a>
-                     
-                    </li>
-    <li>
-                    <a href="/a/news/2016/0830/4532.html" target="_blank">公司新闻公司新闻</a>
-                     
-                    </li>
-    <li>
-                    <a href="/a/news/2016/0825/4530.html" target="_blank">公司新闻公司新闻</a>
-                     
-                    </li>
-    <li>
-                    <a href="/a/news/2016/0825/4531.html" target="_blank">公司新闻公司新闻</a>
-                     
-                    </li>
-    <li>
-                    <a href="/a/news/2016/0809/4455.html" target="_blank">公司新闻公司新闻</a>
-                     
-                    </li>
+                    {%for new in acts%}
+                        <li>
+                            <a href="/pro/detail/?id={{new.id}}" target="_blank"> {{new.title}}</a>
+                             
+                        </li>
+                    {%endfor%}
 
                 </ul>
+            </dd>ul>
             </dd>
         </dl>
         
         <dl class="list-news mr0">
             <dt><h3>成功案例</h3> <a href="#" target="_blank" target="_blank">更多<span></span></a></dt>
-            <dd>
-                <dd><div class="news">
-        <a href="http://bbs.uc.cn/thread-5456926-1-1.html" target="_blank">
-            <img src="img/example.jpg">
-            <div class="t">成功案例成功案例</div>
-        </a>
-    </div><ul><li><a href="http://bbs.uc.cn/thread-5456923-1-1.html" target="_blank">成功案例</a></li><li><a href="http://bbs.uc.cn/thread-5431320-1-1.html" target="_blank">成功案例</a></li><li><a href="http://bbs.uc.cn/thread-5432527-1-1.html" target="_blank">成功案例</a></li><li><a href="http://bbs.uc.cn/thread-5436731-1-1.html" target="_blank">成功案例</a></li><li><a href="http://bbs.uc.cn/thread-5431650-1-1.html" target="_blank">成功案例</a></li></ul>
-    </dd>
+                <dd>
+                <div class="news"><a href="#" target="_blank">
+                    {%for fnew in fexams%}
+                        <li>
+                        <img src="{{fnew.major_pic}}" /><div class="t">{{fnew.title}}</div></a></div>
+                             
+                        </li>
+                    {%endfor%}
+                
+                <ul>
+                    {%for new in exams%}
+                        <li>
+                            <a href="/pro/detail/?id={{new.id}}" target="_blank"> {{new.title}}</a>
+                             
+                        </li>
+                    {%endfor%}
+
+                </ul>
+            </dd>
             </dd>
         </dl>
     </div>

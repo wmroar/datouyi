@@ -40,3 +40,6 @@ insert into section(name,content,pid) value ('二手手机','二手手机',1);
 insert into section(name,content,pid) value ('二手电视','二手电视',1);
 insert into section(name,content,pid) value ('二手设备','二手设备',1);
 insert into section(name,content,pid) value ('其他','其他',1);
+insert into section(name,content,pid) value ('主页新闻首条','主页新闻首条');
+insert into section(name,content,pid) value ('主页活动首条','二手设备',1);
+insert into section(name,content,pid) value ('二手设备','二手设备',1);
