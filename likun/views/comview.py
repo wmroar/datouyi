@@ -144,17 +144,17 @@ def add_pro_index():
 
 @comm.route('/')
 def index():
-    news_sql = """select title,id,major_pic,section_idfrom product where section_id  = 2 order by id desc limit 0,6
+    news_sql = """(select title,id,major_pic,section_id from product where section_id  = 2 order by id desc limit 0,6)
                   union
-                  select title,id,major_pic,section_id from product where section_id  = 3 order by id desc limit 0,6
+                  (select title,id,major_pic,section_id from product where section_id  = 3 order by id desc limit 0,6)
                   union
-                  select title,id,major_pic,section_id from product where section_id  = 4 order by id desc limit 0,6
+                  (select title,id,major_pic,section_id from product where section_id  = 4 order by id desc limit 0,6)
                   union
-                  select title,id,major_pic,section_id from product where section_id  = 12 order by id desc limit 0,1
+                  (select title,id,major_pic,section_id from product where section_id  = 12 order by id desc limit 0,1)
                   union
-                  select title,id,major_pic,section_id from product where section_id  = 10 order by id desc limit 0,1
+                  (select title,id,major_pic,section_id from product where section_id  = 10 order by id desc limit 0,1)
                   union
-                  select title,id,major_pic,section_id from product where section_id  = 11 order by id desc limit 0,1
+                  (select title,id,major_pic,section_id from product where section_id  = 11 order by id desc limit 0,1)
                 """
     acts = []
     exams = []
