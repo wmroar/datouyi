@@ -71,3 +71,15 @@ def index_pro_detail():
     sql = "select title,read_num,content from product where id = %(id)s"
     data = g.db.query(sql,{'id':id})
     return render_template('prodetail.html',data=data)
+
+
+@pro.route('/all/')
+def all_product():
+    page = int(request.args.get('page',0))
+    sql = "select * from product where section_id > 4 order by read_num desc limit %(starts)s,%(ends)s"
+    sql_dict = {
+        "starts":page*9,
+        "ends"  : page*9  + 9,
+    }
+    datas = g.db.query(sql,sql_dict)
+    return render_template('product.html',data=datas)
