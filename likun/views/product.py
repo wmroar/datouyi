@@ -28,6 +28,7 @@ pro = Blueprint('pro', __name__, url_prefix='/pro')
 def do_add_pro():
     current_app.logger.info(request.form)
     args = request.form
+    pro_section = args.get('prosection',1)
     pro_name = args.get('proname')
     pro_title = args.get('protitle')
     pro_price = args.get('proprice')
@@ -41,7 +42,7 @@ def do_add_pro():
     secure_f = secure_filename(f.filename)
     file_path = os.path.join(path,secure_f)
     f.save(file_path)
-    url_file_path = 'static/uploadpic/' + secure_f
+    url_file_path = url_for('static',filename ='uploadpic/' + secure_f,_external=True)
 
     sql_dict = {
         'title': pro_title,
@@ -51,11 +52,15 @@ def do_add_pro():
         'prioriry': pro_prioriry,
         'price': pro_price,
         'source': pro_source,
+        'major_pic':url_file_path,
+        'section_id':pro_section
     }
 
 
-    sql = """insert into product(title,name,content,user_id,prioriry,price,source)
-    values (%(title)s,%(name)s,%(content)s,%(user_id)s,%(prioriry)s,%(price)s,%(source)s)
+    sql = """insert into product(section_id,title,name,content,user_id,prioriry,price,source,major_pic)
+             values 
+             (%(section_id)s,%(title)s,%(name)s,%(content)s,
+              %(user_id)s,%(prioriry)s,%(price)s,%(source)s,%(major_pic)s)
     """
     g.db.execute(sql,sql_dict)
     return '添加成功'

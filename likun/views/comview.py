@@ -138,4 +138,6 @@ def upload_all():
 
 @comm.route('/addpro/',methods = ['GET','POST'])
 def add_pro_index():
-    return render_template('add_product.html')
+    sql = 'select id,name from section where id > 1'
+    datas = g.db.query(sql)
+    return render_template('add_product.html',sections = datas)

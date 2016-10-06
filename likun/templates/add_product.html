@@ -10,6 +10,11 @@
 </head>
 <body>
 <form action="/pro/addpro/" enctype="multipart/form-data" method = 'post'>
+    <select>
+        {% for section in sections%}
+            <option value="{{section.id}}">section.name</option>
+        {%endfor%}
+    </select>
     <div class='pro'>产品名称： <input type="text" name="proname" ><br><br>
     产品标题： <input type="text" name="protitle"><br><br>
     产品价格： <input type="text" name="propricce"><br><br>
