@@ -15,7 +15,7 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script type="text/javascript" src="{{url_for('static',filename='js/move-top.js')}}"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="{{url_for('static',filename='js/easing.js')}}"></script>
 <!--fonts-->
 <link href='http://fonts.useso.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 <!--//fonts-->    
@@ -43,8 +43,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="header-top-in">
                         
                         <ul class="support">
-                            <li><a href="mailto:info@example.com"><i class="glyphicon glyphicon-envelope"> </i>info@example.com</a></li>
-                            <li><span><i class="glyphicon glyphicon-earphone" class="tele-in"> </i>0 462 261 61 61</span></li>            
+                            <li><a href="mailto:info@example.com"><i class="glyphicon glyphicon-envelope"> </i>wang_303496@163.com</a></li>
+                            <li><span><i class="glyphicon glyphicon-earphone" class="tele-in"> </i>1111111111</span></li>            
                         </ul>
                         <ul class=" support-right">
                             <li><a href="account.html"><i class="glyphicon glyphicon-user" class="men"> </i>Login</a></li>
@@ -71,56 +71,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li  class="active" class="grid"><a href="#">设备供应</a>
                     </li>
                     <li class="grid"><a href="#">设备服务</a>
-<!--                         <div class="mepanel">
-                            <div class="row">
-                                <div class="col1 me-one">
-                                    <h4>Shop</h4>
-                                    <ul>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="product.html">Men</a></li>
-                                        <li><a href="product.html">Women</a></li>
-                                        <li><a href="product.html">Accessories</a></li>
-                                        <li><a href="product.html">Kids</a></li>
-                                        <li><a href="product.html">login</a></li>
-                                        <li><a href="product.html">Brands</a></li>
-                                        <li><a href="product.html">My Shopping Bag</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col1 me-one">
-                                    <h4>Style Zone</h4>
-                                    <ul>
-                                        <li><a href="product.html">Men</a></li>
-                                        <li><a href="product.html">Women</a></li>
-                                        <li><a href="product.html">Brands</a></li>
-                                        <li><a href="product.html">Kids</a></li>
-                                        <li><a href="product.html">Accessories</a></li>
-                                        <li><a href="product.html">Style Videos</a></li>
-                                    </ul>    
-                                </div>
-                                <div class="col1 me-one">
-                                    <h4>Popular Brands</h4>
-                                    <ul>
-                                        <li><a href="product.html">Levis</a></li>
-                                        <li><a href="product.html">Persol</a></li>
-                                        <li><a href="product.html">Nike</a></li>
-                                        <li><a href="product.html">Edwin</a></li>
-                                        <li><a href="product.html">New Balance</a></li>
-                                        <li><a href="product.html">Jack & Jones</a></li>
-                                        <li><a href="product.html">Paul Smith</a></li>
-                                        <li><a href="product.html">Ray-Ban</a></li>
-                                        <li><a href="product.html">Wood Wood</a></li>
-                                    </ul>    
-                                </div>
-                            </div>
-                        </div> -->
-                    </li>
-                    <li class="grid"><a href="typography.html">关于我们</a>
-                        
-                    </li>
-                </ul>
-                <div class="clearfix"> </div>
-            </div>
-                    <!---->
                     <div class="cart box_1">
                         <a href="checkout.html">
                         <h3> <div class="total">
@@ -162,15 +112,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <h3 class="cate">设备种类</h3>
                     </div>
     <ul class="menu">
-        <li class="item1"><a href="#">手机元器件 </a>
-        </li>
-        <li class="item2"><a href="#">空调元器件 </a>
-        </li>
-        <li class="item3"><a href="#">电视元器件</a>
-        </li>
-        <li class="item4"><a href="#">其他</a>
-
-        </li>
+        {%for section in sections%}
+            <li class="item1"><a href="/pro/all/?section_id={{section.id}}">{{section.name}} </a>
+            </li>
+        {%endfor%}
     </ul>
    </div>
 
@@ -246,326 +191,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="product-right-top">
                     <div class="top-product">
+                       {%for data in datas%}
+
                         <div class="col-md-4 chain-grid  simpleCart_shelfItem">
                             <div class="grid-span-1">
-                            <a  href="detail.html"><img class="img-responsive " src="img/prod_1.jpg" alt=" ">
+                            <a  href="detail.html"><img class="img-responsive " src="{{data.major_pic}}" alt=" ">
                                 <div class="link">
                                 <ul >
                                         <li><i class="glyphicon glyphicon-search"> </i></li>
                                         
-                            </ul>
+                                </ul>
                             </div>
                             </a>
                         </div>
-                            <div class="grid-chain-bottom ">
-                                <a href="detail.html">设备设备 #1</a>
-                                <div class="star-price">
-                                    <div class="price-at">
-                                        <ul class="star-footer">
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                    </ul>
-                                    </div>
-                                    <div class="price-at-bottom ">
-                                        <span class="item_price">$ 75.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
+                        <div class="grid-chain-bottom ">
+                            <a href="detail.html">{{data.name}}</a>
+                            <div class="star-price">
+                                <div class="price-at">
+                                    <ul class="star-footer">
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                    <li><a href="#"><i> </i></a></li>
+                                </ul>
+                                </div>
+                                <div class="price-at-bottom ">
+                                    <span class="item_price">$ 75.00</span>
+                                </div>
+                                <div class="clearfix"> </div>
                             </div>
                             <div class="cart-add">
                                 <a class="add1 item_add" href="#">添加至购物车 <i> </i></a>
                                 <a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
                                 <div class="clearfix"> </div>
                             </div>
-                            </div>
-                            
                         </div>
-                        <div class="col-md-4 chain-grid simpleCart_shelfItem">
-                    <div class="grid-span-1">
-                            <a href="detail.html"><img class="img-responsive " src="img/prod_2.jpg" alt=" ">
-                        <div class="link">
-                                <ul >
-                                        <li><i class="glyphicon glyphicon-search"> </i></li>
-                                        
-                            </ul>
-                            </div></a>
-                            </div>
-                            <div class="grid-chain-bottom ">
-                                <a href="detail.html">###设备设备 #1</a>
-                                <div class="star-price">
-                                    <div class="price-at">
-                                        <ul class="star-footer">
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                    </ul>
-                                    </div>
-                                    <div class="price-at-bottom ">
-                                        <span class="item_price">$ 75.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                            </div>
-                            <div class="cart-add">
-                                <a class="add1 item_add" href="#">添加购物车 <i> </i></a>
-                            <a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
-                                <div class="clearfix"> </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 chain-grid simpleCart_shelfItem">
-                    <div class="grid-span-1">
-                            <a href="detail.html"><img class="img-responsive " src="img/prod_3.jpg" alt=" ">
-                        <div class="link">
-                                <ul >
-                                        <li><i class="glyphicon glyphicon-search"> </i></li>
-                                        
-                            </ul>
-                            </div></a>
-                            </div>
-                            <div class="grid-chain-bottom ">
-                                <a href="detail.html">设备设备 #1</a>
-                                <div class="star-price">
-                                    <div class="price-at">
-                                        <ul class="star-footer">
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                    </ul>
-                                    </div>
-                                    <div class="price-at-bottom ">
-                                        <span class="item_price">$ 75.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                            </div>
-                            <div class="cart-add">
-                                <a class="add1 item_add" href="#">添加购物车 <i> </i></a>
-                                <a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
-                                <div class="clearfix"> </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="top-product">
-                    
-                        <div class="col-md-4 chain-grid simpleCart_shelfItem">
-                        <div class="grid-span-1">
-                            <a href="detail.html"><img class="img-responsive " src="img/prod_4.jpg" alt=" ">
-                        <div class="link">
-                                <ul >
-                                        <li><i class="glyphicon glyphicon-search"> </i></li>
-                                        
-                            </ul>
-                            </div><span>NEW</span></a>
-                            </div>
-                            <div class="grid-chain-bottom ">
-                                <a href="detail.html">设备设备 #1</a>
-                                <div class="star-price">
-                                    <div class="price-at">
-                                        <ul class="star-footer">
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                    </ul>
-                                    </div>
-                                    <div class="price-at-bottom ">
-                                        <span class="item_price">$ 75.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                            </div>
-                            <div class="cart-add">
-                                <a class="add1 item_add" href="#">添加购物车 <i> </i></a>
-                                <a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
-                                <div class="clearfix"> </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 chain-grid simpleCart_shelfItem">
-                    
-                    <div class="grid-span-1">
-                            <a href="detail.html"><img class="img-responsive " src="img/prod_5.jpg" alt=" ">
-                        <div class="link">
-                                <ul >
-                                        <li><i class="glyphicon glyphicon-search"> </i></li>
-                                        
-                            </ul>
-                            </div></a>
-                            </div>
-                            <div class="grid-chain-bottom ">
-                                <a href="detail.html">设备设备 #1</a>
-                                <div class="star-price">
-                                    <div class="price-at">
-                                        <ul class="star-footer">
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                    </ul>
-                                    </div>
-                                    <div class="price-at-bottom ">
-                                        <span class="item_price">$ 75.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                            </div>
-                            <div class="cart-add">
-                                <a class="add1 item_add" href="#">添加购物车 <i> </i></a>
-                                <a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
-                                <div class="clearfix"> </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 chain-grid simpleCart_shelfItem">
-                    <div class="grid-span-1">
-                            <a href="detail.html"><img class="img-responsive " src="img/prod_6.jpg" alt=" ">
-                        <div class="link">
-                                <ul >
-                                        <li><i class="glyphicon glyphicon-search"> </i></li>
-                                        
-                            </ul>
-                            </div></a>
-                            </div>
-                            <div class="grid-chain-bottom ">
-                                <a href="detail.html">设备设备 #1</a>
-                                <div class="star-price">
-                                    <div class="price-at">
-                                        <ul class="star-footer">
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                    </ul>
-                                    </div>
-                                    <div class="price-at-bottom ">
-                                        <span class="item_price">$ 75.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                            </div>
-                            <div class="cart-add">
-                                <a class="add1 item_add" href="#">添加购物车 <i> </i></a>
-                                <a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
-                                <div class="clearfix"> </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="top-product">
-                
-                        <div class="col-md-4 chain-grid simpleCart_shelfItem">
-                        <div class="grid-span-1">
-                            <a href="detail.html"><img class="img-responsive " src="img/prod_7.jpg" alt=" ">
-                        <div class="link">
-                                <ul >
-                                        <li><i class="glyphicon glyphicon-search"> </i></li>
-                                        
-                            </ul>
-                            </div><span>NEW</span></a>
-                            </div>
-                            <div class="grid-chain-bottom ">
-                                <a href="detail.html">设备设备 #1</a>
-                                <div class="star-price">
-                                    <div class="price-at">
-                                        <ul class="star-footer">
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                    </ul>
-                                    </div>
-                                    <div class="price-at-bottom ">
-                                        <span class="item_price">$ 75.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                            </div>
-                            <div class="cart-add">
-                                <a class="add1 item_add" href="#">添加购物车 <i> </i></a>
-                                <a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
-                                <div class="clearfix"> </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 chain-grid simpleCart_shelfItem">
-                    <div class="grid-span-1">
-                            <a href="detail.html"><img class="img-responsive " src="img/prod_3.jpg" alt=" ">
-                        <div class="link">
-                                <ul >
-                                        <li><i class="glyphicon glyphicon-search"> </i></li>
-                                        
-                            </ul>
-                            </div>
-                        <span>NEW</span></a>
-                            </div>
-                            <div class="grid-chain-bottom ">
-                                <a href="detail.html">设备设备 #1</a>
-                                <div class="star-price">
-                                    <div class="price-at">
-                                        <ul class="star-footer">
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                    </ul>
-                                    </div>
-                                    <div class="price-at-bottom ">
-                                        <span class="item_price">$ 75.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                            </div>
-                            <div class="cart-add">
-                                <a class="add1 item_add" href="#">添加购物车 <i> </i></a>
-                            <a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
-                                <div class="clearfix"> </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 chain-grid simpleCart_shelfItem">
-                    <div class="grid-span-1">
-                            <a href="detail.html"><img class="img-responsive " src="img/prod_3.jpg" alt=" ">
-                        <div class="link">
-                                <ul >
-                                        <li><i class="glyphicon glyphicon-search"> </i></li>
-                                        
-                            </ul>
-                            </div>
-                        <span>NEW</span></a>
-                            </div>
-                            <div class="grid-chain-bottom ">
-                                <a href="detail.html">设备设备 #1</a>
-                                <div class="star-price">
-                                    <div class="price-at">
-                                        <ul class="star-footer">
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                        <li><a href="#"><i> </i></a></li>
-                                    </ul>
-                                    </div>
-                                    <div class="price-at-bottom ">
-                                        <span class="item_price">$ 75.00</span>
-                                    </div>
-                                    <div class="clearfix"> </div>
-                            </div>
-                            <div class="cart-add">
-                                <a class="add1 item_add" href="#">添加购物车 <i> </i></a>
-                                <a class="add2" href="#"><i class="glyphicon glyphicon-heart-empty"> </i></a>
-                                <div class="clearfix"> </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"> </div>
+                        {%endfor%}
                     </div>
                 </div>
                 <ul class="start">

@@ -76,10 +76,16 @@ def index_pro_detail():
 @pro.route('/all/')
 def all_product():
     page = int(request.args.get('page',0))
-    sql = "select * from product where section_id > 4 order by read_num desc limit %(starts)s,%(ends)s"
+    section_id = int(request.args.get("section_id",0))
+    if section_id < 13:
+        ids = ""
+    else:
+        ids = "and section_id = %d"%section_id
+    sql = "select * from product where section_id >= 13" + ids + "order by read_num desc limit %(starts)s,%(ends)s"
     sql_dict = {
         "starts":page*9,
         "ends"  : page*9  + 9,
     }
     datas = g.db.query(sql,sql_dict)
-    return render_template('product.html',data=datas)
+    sections = g.db.query('select id,name from section where id >= 13')
+    return render_template('product.html',data=datas,page=page + 1,sections = sections)
