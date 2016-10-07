@@ -13,6 +13,7 @@ body a{
 .headview {
     height: 130px;
     width: auto;
+    margin-top: 100px;
 }
 .major-pic {
     padding-left: 100px;
