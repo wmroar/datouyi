@@ -102,4 +102,4 @@ def device_detail():
     }
     datas = g.db.query(sql,sql_dict)
     sections = g.db.query('select id,name from section where id >= 13')
-    return render_template('detail.html',datas=datas,page=page + 1,sections = sections)
+    return render_template('detail.html',datas=datas,sections = sections)
