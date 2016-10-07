@@ -190,8 +190,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="clearfix"></div>        
                 </div>
                 <div class="product-right-top">
-                {%for data in datas%}
                     <div class="top-product">
+                    {%for data in datas%}
                             <div class="col-md-4 chain-grid  simpleCart_shelfItem">
                                 <div class="grid-span-1">
                                 <a  href="detail.html"><img class="img-responsive " src="{{data.major_pic}}" alt=" ">
@@ -226,10 +226,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="clearfix"> </div>
                                 </div>
                             </div>
-                        
+                        <div class="clearfix"> </div>
+                        {%endfor%}
                     </div>
-                    <div class="clearfix"> </div>
-                    {%endfor%}
                 </div>
                 <ul class="start">
                     <li><a href="#"><i> </i></a></li>
