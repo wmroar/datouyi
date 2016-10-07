@@ -4304,4 +4304,11 @@ li.ring-in img{
 	.login-left p, .login-right p {
 	    font-size: .95em;
 	}
+    .major_pic {
+        padding-left: 0px;
+    }
+    .proinfo {
+        padding-left: 100px;
+        padding-top:  0 px;
+    }
 }
