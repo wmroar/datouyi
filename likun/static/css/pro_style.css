@@ -10,6 +10,10 @@ body a{
 	-ms-transition: 0.5s all;
 }
 
+.headview {
+    height: 130px;
+    width: auto;
+}
 .major-pic {
     padding-left: 0px;
 }
