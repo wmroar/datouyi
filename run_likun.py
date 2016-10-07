@@ -12,5 +12,5 @@ from likun import app
 
 # 启动
 
-if app.config['DEBUG']:
-    app.run(host=app.config['APP_HOST'], port=app.config['APP_PORT'], debug=app.config['DEBUG'])
+#if app.config['DEBUG']:
+#   app.run(host=app.config['APP_HOST'], port=app.config['APP_PORT'], debug=app.config['DEBUG'])
