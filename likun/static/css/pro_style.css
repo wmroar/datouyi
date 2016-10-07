@@ -9,6 +9,14 @@ body a{
 	-moz-transition: 0.5s all;
 	-ms-transition: 0.5s all;
 }
+
+.major-pic {
+    padding-left: 0px;
+}
+.proinfo {
+    padding-left: 150px;
+    padding-top:  0 px;
+}
  ul{
 	padding: 0;
 	margin: 0;
@@ -4304,11 +4312,4 @@ li.ring-in img{
 	.login-left p, .login-right p {
 	    font-size: .95em;
 	}
-    .major-pic {
-        padding-left: 0px;
-    }
-    .proinfo {
-        padding-left: 100px;
-        padding-top:  0 px;
-    }
 }
