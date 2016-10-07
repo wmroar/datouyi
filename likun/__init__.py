@@ -9,4 +9,4 @@ bootstrap(app)
 
 @app.route('/')
 def index():
-    return  redirect(url_for('comm',filename='/',_external=True))
+    return redirect('/common/')
