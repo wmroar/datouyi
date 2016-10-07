@@ -31,7 +31,7 @@ def do_add_pro():
     pro_section = args.get('prosection',1)
     pro_name = args.get('proname')
     pro_title = args.get('protitle')
-    pro_price = args.get('proprice')
+    pro_price = args.get('proprice',0)
     current_app.logger.info(dir(request))
     pro_pic = args.get('propic')
     pro_content = args.get('editorValue')
