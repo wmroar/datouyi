@@ -199,8 +199,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>  
         <div class="produts_info">
         {%for data in datas%}
+           <h3 align="center"><strong>{{data.title}}</strong>></h3>
             <div class = 'headview'>
-               <h3 align="center"><strong>{{data.title}}</strong>></h3>
                 <div class = 'major-pic'>
                     <img src="{{data.major_pic}}" align="left" style="padding-left:0px;position:absolute; left:100px; top:0px;">
                 </div>
@@ -211,7 +211,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </ul>
                 </div>
             </div>
-            <p align="center">{{data.content|safe}}</p>
+            <br><br><p align="center">{{data.content|safe}}</p>
         {%endfor%}
         </div>
                 
