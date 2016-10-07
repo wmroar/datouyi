@@ -18,10 +18,12 @@ body a{
     padding-left: 0px;
     height: 130px;
     width: 200px;
+    display:inline;
 }
 .proinfo {
     padding-left: 150px;
     padding-top:  0 px;
+    display:inline;
 }
  ul{
 	padding: 0;
