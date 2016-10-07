@@ -90,3 +90,16 @@ def all_product():
     datas = g.db.query(sql,sql_dict)
     sections = g.db.query('select id,name from section where id >= 13')
     return render_template('product.html',datas=datas,page=page + 1,sections = sections)
+
+@pro.route('/info/')
+def device_detail():
+    id = request.args.get('id')
+    if not id:
+        return '没有找到相关的设备'
+    sql = "select * from product where id = %(id)s"
+    sql_dict = {
+        'id':id
+    }
+    datas = g.db.query(sql,sql_dict)
+    sections = g.db.query('select id,name from section where id >= 13')
+    return render_template('detail.html',datas=datas,page=page + 1,sections = sections)
