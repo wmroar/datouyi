@@ -70,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <ul class="memenu skyblue"><li><a href="index.html">主页</a></li>
                     <li  class="active" class="grid"><a href="#">设备供应</a>
                     </li>
-                    <li class="grid"><a href="#">设备服务</a>
+<!--                     <li class="grid"><a href="#">设备服务</a>
                     <div class="cart box_1">
                         <a href="checkout.html">
                         <h3> <div class="total">
@@ -79,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </a>
                         <p><a href="#" class="simpleCart_empty">购物车</a></p>
                         <div class="clearfix"> </div>
-                    </div>
+                    </div> -->
 
 <div class="clearfix"> </div>
                     <!---->
@@ -199,6 +199,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>  
         <div class="col-md-7 single-top-in simpleCart_shelfItem">
         {%for data in datas%}
+            <div class = 'headview'>
+                <div class = 'major_pic'>
+                    <img src="{{data.major_pic}}">>
+                </div>
+                <div class='proinfo'>
+                <ul>
+                    <li>{{data.title}}</li>
+                    <li>{{data.price}}</li>
+                </ul>
+                </div>
+            </div>
             {{data.content}}
         {%endfor%}
         </div>
