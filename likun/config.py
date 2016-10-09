@@ -4,7 +4,7 @@ from datetime import timedelta
 """
 run host and port
 """
-APP_HOST = '127.0.0.1'
+APP_HOST = '120.24.250.103'
 APP_PORT = 9999
 
 
